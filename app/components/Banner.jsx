@@ -3,14 +3,14 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <header className="w-full bg-neutral-900/20  shadow-lg mb-12 rounded-b-xl">
-      <div className="max-w-5xl mx-auto text-center px-6 mt-6">
+    <header className="w-full mb-10 rounded-b-xl">
+      <div className="max-w-5xl mx-auto text-center mt-6">
         <Image
-            src="/fred_logo.png"
-            alt="FredFrame Logo"    
-            width={380}
-            height={380}
-            className="mx-auto mb-4"
+          src="/fred_logo.png"
+          alt="FredFrame Logo"
+          width={360}
+          height={360}
+          className="mx-auto mb-4"
         />
       </div>
     </header>

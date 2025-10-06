@@ -20,7 +20,7 @@ export default function FredCoverCanvas() {
     { key: "USB", label: "USB (EXCLUSIVE) ⭐"}
   ];
 
-const buildVersion = "v2.0.0";
+const buildVersion = "v2.0.1";
 
 const sayings = [
   "Look at this masterpiece",
@@ -81,8 +81,6 @@ const sayings = [
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
-
-   
 
     const reader = new FileReader();
     reader.onload = (event) => {
@@ -245,7 +243,7 @@ const sayings = [
             <img
               src="/fred.png"
               alt="FredFrame Example"
-              className="absolute w-full left-[-50px] bottom-[-81px] md:w-96 opacity-80 pointer-events-none select-none"
+              className={`absolute w-full left-[-50px] bottom-[-81px] md:w-96 opacity-80 pointer-events-none select-none${loading ? " hidden" : ""}`}
             />
           )}
 
@@ -274,8 +272,8 @@ const sayings = [
         <p className="text-gray-600 font-semibold text-lg">
           made by <a href="https://coleridge.dev" className="font-black text-xl tracking-tighter">kai</a>
         </p>
-        <p className="m-2 font-mono">
-          This app has <span className="font-bold">no affiliation</span> with Fred again.
+        <p className="mt-4 tracking-tighter text-[17px]">
+          This app has <span className="font-bold">no affiliation</span> with <a className="font-bold" href="https://open.spotify.com/artist/4oLeXFyACqeem2VImYeBFe">Fred again..</a>
         </p>
 
         <p className="text-sm font-mono bg-neutral-800/20 mt-4 px-2 py-1 inline-block rounded">
