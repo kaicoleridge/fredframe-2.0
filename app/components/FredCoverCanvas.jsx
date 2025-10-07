@@ -143,15 +143,13 @@ const sayings = [
             gradient.addColorStop(1, "rgba(0, 60, 200, 0.5)");
             break;
           case "USB":
-  // make image black & white first
-  ctx.filter = "grayscale(100%) contrast(110%) brightness(90%)";
-  ctx.drawImage(img, sourceX, sourceY, size, size, 0, 0, canvasSize, canvasSize);
-
-  // add subtle dark tint (like USB album)
-  ctx.fillStyle = "rgba(0, 0, 0, 0.35)";
-  ctx.filter = "none"
-  ctx.fillRect(0, 0, canvasSize, canvasSize);
-  break;
+            ctx.filter = "grayscale(100%) contrast(115%) brightness(85%)";
+            ctx.drawImage(img, sourceX, sourceY, size, size, 0, 0, canvasSize, canvasSize);
+           // Reset filter before applying overlay
+            ctx.filter = "none";
+            ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
+            ctx.fillRect(0, 0, canvasSize, canvasSize);
+            break;
 
           default:
             gradient.addColorStop(0, "rgba(0,0,0,0.25)");
