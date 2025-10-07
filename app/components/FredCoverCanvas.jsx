@@ -149,6 +149,7 @@ const sayings = [
 
   // add subtle dark tint (like USB album)
   ctx.fillStyle = "rgba(0, 0, 0, 0.35)";
+  ctx.filter = "none"
   ctx.fillRect(0, 0, canvasSize, canvasSize);
   break;
 
