@@ -142,15 +142,22 @@ const sayings = [
             gradient.addColorStop(0, "rgba(0, 0, 255, 0.5)");
             gradient.addColorStop(1, "rgba(0, 60, 200, 0.5)");
             break;
-          case "USB":
-            ctx.filter = "grayscale(100%) contrast(115%) brightness(85%)";
-            ctx.drawImage(img, sourceX, sourceY, size, size, 0, 0, canvasSize, canvasSize);
-           // Reset filter before applying overlay
-            ctx.filter = "none";
-            ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
-            ctx.fillRect(0, 0, canvasSize, canvasSize);
-            break;
+          case "USB": {
+  // Reset any previous filter before applying
+  ctx.filter = "grayscale(100%) contrast(120%) brightness(85%)";
+  
+  // Draw the image with the filter applied
+  ctx.drawImage(img, sourceX, sourceY, size, size, 0, 0, canvasSize, canvasSize);
+  
+  // Reset filter immediately after drawing
+  ctx.filter = "none";
 
+  // Add subtle dark overlay (USB aesthetic)
+  ctx.fillStyle = "rgba(0, 0, 0, 0.45)";
+  ctx.fillRect(0, 0, canvasSize, canvasSize);
+
+  break;
+}
           default:
             gradient.addColorStop(0, "rgba(0,0,0,0.25)");
             gradient.addColorStop(1, "rgba(0,0,0,0.2)");
